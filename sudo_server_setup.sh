@@ -6,7 +6,7 @@ apt upgrade -y
 apt install nala
 
 # install tools and dependencies
-nala install btop build-essential curl cmake fd-find fzf gettext git jq make nano neovim ninja-build ripgrep tmux unzip xclip
+nala install btop build-essential curl cmake fd-find fzf gettext git jq make nano ninja-build ripgrep tmux unzip xclip
 
 # installing neovim
 cd /home/nicholas/Downloads
@@ -20,5 +20,5 @@ git checkout stable
 
 make CMAKE_BUILD_TYPE=RelWithDebInfo
 cd /home/nicholas/Downloads/neovim/build
-cpack -G DEB             # sudo
-dpkg -i nvim-linux64.deb # sudo
+cpack -G DEB                  # sudo
+dpkg -i nvim-linux-x86_64.deb # sudo
