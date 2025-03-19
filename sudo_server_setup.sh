@@ -6,5 +6,5 @@ apt upgrade -y
 apt install nala
 
 # install programs
-# lazygit not found in debian
-nala install btop curl fd-find fzf git jq nano neofetch ripgrep tmux
+# neovim may be an older version
+nala install btop curl fd-find fzf git jq nano neovim ripgrep tmux
