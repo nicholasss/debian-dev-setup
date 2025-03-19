@@ -47,6 +47,9 @@ echo "" >>~/.bashrc
 echo "# ADDED BY NONSUDO_SETUP_SCRIPT" >>~/.bashrc
 echo "alias ll='ls -lha'" >>~/.bashrc
 echo "alias rm='rm -i'" >>~/.bashrc
+echo "" >>~/.bashrc
+echo "bind -s 'set completion-ignore-case on'" >>~/.bashrc
+echo "" >>~/.bashrc
 source ~/.bashrc
 
 # finally go to home
