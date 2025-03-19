@@ -5,6 +5,20 @@ apt update
 apt upgrade -y
 apt install nala
 
-# install programs
-# neovim may be an older version
-nala install btop curl fd-find fzf git jq nano neovim ripgrep tmux
+# install tools and dependencies
+nala install btop build-essential curl cmake fd-find fzf gettext git jq make nano neovim ninja-build ripgrep tmux unzip xclip
+
+# installing neovim
+cd /home/nicholas/Downloads
+git clone https://github.com/neovim/neovim ~/Downloads/neovim
+cd /home/nicholas/Downloads/neovim
+git checkout stable
+
+# for specific tag
+# git fetch --all --tags
+# git checkout v0.10.4
+
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+cd /home/nicholas/Downloads/neovim/build
+cpack -G DEB             # sudo
+dpkg -i nvim-linux64.deb # sudo
