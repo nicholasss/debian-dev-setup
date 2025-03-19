@@ -20,5 +20,9 @@ git checkout stable
 
 make CMAKE_BUILD_TYPE=RelWithDebInfo
 cd /home/nicholas/Downloads/neovim/build
-cpack -G DEB                  # sudo
-dpkg -i nvim-linux-x86_64.deb # sudo
+cpack -G DEB
+
+echo ""
+echo "Please install neovim with the following command:"
+echo "   --> sudo dpkg -i ~/Downloads/neovim/build/nvim-linux-x86_64.deb"
+echo ""
