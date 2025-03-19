@@ -10,7 +10,7 @@ nala install btop build-essential curl cmake fd-find fzf gettext git jq make nan
 
 # installing neovim
 cd /home/nicholas/Downloads
-git clone https://github.com/neovim/neovim ~/Downloads/neovim
+git clone https://github.com/neovim/neovim /home/nicholas/Downloads/neovim
 cd /home/nicholas/Downloads/neovim
 git checkout stable
 
