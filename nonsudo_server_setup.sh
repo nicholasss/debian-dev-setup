@@ -1,9 +1,17 @@
 #!/bin/bash
 
 # making directories
-mkdir ~/Developer
-mkdir ~/Downloads
-mkdir ~/scripts
+if [ ! -d "~/Developer" ]; then
+  mkdir ~/Developer
+fi
+
+if [ ! -d "~/Downloads" ]; then
+  mkdir ~/Downloads
+fi
+
+if [ ! -d "~/scripts" ]; then
+  mkdir ~/scripts
+fi
 
 # installing lazygit
 # used for lazyvim
@@ -30,6 +38,10 @@ source ~/.config/envman/PATH.env
 webi node@22
 source ~/.config/envman/PATH.env
 
+# create ~/.bashrc if it does not exist
+if [ ! -f "~/.bashrc" ]; then
+  touch ~/.bashrc
+fi
 # add aliases
 echo "" >>~/.bashrc
 echo "# ADDED BY NONSUDO_SETUP_SCRIPT" >>~/.bashrc

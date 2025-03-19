@@ -15,6 +15,11 @@ Do not use unless you have read the entire script and want the same packages!
 - ripgrep (rg): searches current directory with regex while respecting .gitignore
 - tmux: terminal multiplexer
 
+## aliases
+
+- ll --> ls -lha
+- rm --> rm -i
+
 ## downloaded tools
 
 - neovim: modern lua-configurable terminal text editor
