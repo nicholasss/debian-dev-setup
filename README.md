@@ -38,3 +38,7 @@ Do not use unless you have read the entire script and want the same packages!
 
 - Golang (official toolchain): 1.24.XX
 - Javascript (node.js): 22.14 LTS
+
+## other
+
+- case-insensitive tab autocomplete

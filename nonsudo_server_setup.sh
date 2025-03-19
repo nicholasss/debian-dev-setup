@@ -39,19 +39,24 @@ webi node@22
 source ~/.config/envman/PATH.env
 
 # create ~/.bashrc if it does not exist
-if [ ! -f "~/.bashrc" ]; then
-  touch ~/.bashrc
+if [ ! -f "~/.bash_aliases" ]; then
+  touch ~/.bash_aliases
 fi
 # add aliases
+echo "" >>~/.bash_aliases
+echo "# ADDED BY NONSUDO_SETUP_SCRIPT" >>~/.bash_aliases
+echo "alias ll='ls -lha'" >>~/.bash_aliases
+echo "alias rm='rm -i'" >>~/.bash_aliases
+echo "" >>~/.bash_aliases
+
+# setup case insensitivity
 echo "" >>~/.bashrc
 echo "# ADDED BY NONSUDO_SETUP_SCRIPT" >>~/.bashrc
-echo "alias ll='ls -lha'" >>~/.bashrc
-echo "alias rm='rm -i'" >>~/.bashrc
-echo "" >>~/.bashrc
 echo "bind -s 'set completion-ignore-case on'" >>~/.bashrc
 echo "" >>~/.bashrc
-source ~/.bashrc
 
 # finally go to home
 cd ~
 echo "nonsudo setup complete."
+echo "!!! please run 'source ~/.bashrc' in the current terminal."
+echo "!!! future terminals will be setup"
