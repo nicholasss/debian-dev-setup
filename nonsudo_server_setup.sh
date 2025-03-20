@@ -13,6 +13,11 @@ if [ ! -d "~/scripts" ]; then
   mkdir ~/scripts
 fi
 
+# git config
+git config --global init.defaultBranch main
+git config --global user.name "nicholas"
+git config --global user.email "nicholasss@users.noreply.github.com"
+
 # installing lazygit
 # used for lazyvim
 cd ~/Downloads
