@@ -34,14 +34,15 @@ cd ~/Downloads
 curl -sS https://webi.sh/webi | sh
 source ~/.config/envman/PATH.env
 
+# install github cli
+webi gh
+
 # installing golang 1.24.XX with webi
 # webi does not need a specific directory
 webi go@v1.24
-source ~/.config/envman/PATH.env
 
 # installing node 22.14 lts
 webi node@22
-source ~/.config/envman/PATH.env
 
 # create ~/.bashrc if it does not exist
 if [ ! -f "~/.bash_aliases" ]; then
@@ -64,4 +65,5 @@ echo "" >>~/.bashrc
 cd ~
 echo "nonsudo setup complete."
 echo "!!! please run 'source ~/.bashrc' in the current terminal."
+echo "!!! please run 'gh auth login' to setup local git"
 echo "!!! future terminals will be setup"
