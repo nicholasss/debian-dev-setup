@@ -86,6 +86,11 @@ sudo -u "$TARGET_USER" bash -c '
   git config --global init.defaultBranch main
   git config --global user.name "Nicholas"
   git config --global user.email "nicholasss@users.noreply.github.com"
+  git config --global alias.aa "add --all"
+  git config --global alias.st "status -s -b"
+  git config --global alias.cm "commit -m"
+  git config --global alias.ll "log --all --decorate --graph --oneline"
+  git config --global alias.df "--no-pager diff"
 
   echo "[User] Installing lazygit..."
   git clone --depth 10 https://github.com/jesseduffield/lazygit.git ~/Downloads/lazygit
@@ -114,18 +119,6 @@ sudo -u "$TARGET_USER" bash -c '
   # installing node 22.14 lts
   echo "[User] Installing Node 22 LTS..."
   webi node@22
-
-  # updating git config
-  echo "[User] Updating ~/.gitconfig..."
-  echo "" >>~/.gitconfig
-  echo "# git aliases" >> ~/.gitconfig
-  echo "[alias]" >> ~/.gitconfig
-  echo "	aa = add --all" >> ~/.gitconfig
-  echo "	st = status -s -b" >> ~/.gitconfig
-  echo "	cm = commit -m" >> ~/.gitconfig
-  echo "	ll = log --all --decorate --graph --oneline" >> ~/.gitconfig
-  echo "	df = --no-pager diff" >> ~/.gitconfig
-  echo "" >>~/.gitconfig
 
   # create ~/.bashrc if it does not exist
   echo "[User] Creating ~/.bash_aliases..."
