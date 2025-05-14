@@ -121,19 +121,20 @@ sudo -u "$TARGET_USER" bash -c '
     touch ~/.bash_aliases
   fi
 
+  # TODO: issues with single quotes
   # add aliases
   echo "[User] Modifying ~/.bash_aliases..."
   echo "" >>~/.bash_aliases
   echo "# ADDED BY NONSUDO_SETUP_SCRIPT" >>~/.bash_aliases
-  echo "alias ll='ls -lha'" >>~/.bash_aliases
-  echo "alias rm='rm -i'" >>~/.bash_aliases
+  echo "alias ll="ls -lha"" >>~/.bash_aliases
+  echo "alias rm="rm -i"" >>~/.bash_aliases
   echo "" >>~/.bash_aliases
   
   # setup case insensitivity
   echo "[User] Modifying ~/.bashrc..."
   echo "" >>~/.bashrc
   echo "# ADDED BY NONSUDO_SETUP_SCRIPT" >>~/.bashrc
-  echo "bind -s 'set completion-ignore-case on'" >>~/.bashrc
+  echo "bind -s "set completion-ignore-case on" >>~/.bashrc
   echo "" >>~/.bashrc
 
   echo "[User] Setting theme to BreezeDark..."
