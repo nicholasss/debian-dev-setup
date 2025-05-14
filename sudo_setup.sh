@@ -7,7 +7,6 @@ apt install nala
 
 # install tools and dependencies
 nala install btop build-essential curl cmake fd-find fzf gettext git jq make nano ninja-build ripgrep tmux unzip xclip
-
 # installing neovim
 cd /home/nicholas/Downloads
 git clone https://github.com/neovim/neovim /home/nicholas/Downloads/neovim

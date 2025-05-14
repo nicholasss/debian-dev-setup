@@ -26,7 +26,7 @@ cd ~/Downloads/lazygit
 go install
 
 # install lazyvim distro
-git clone --depth 10 https://github.com/LazyVim/starter ~/.config/nvim
+git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 
 # install webi
