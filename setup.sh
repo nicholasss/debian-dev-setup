@@ -53,7 +53,7 @@ s | server)
   ;;
 d | desktop)
   echo "=== [Root] Configuring desktop-specific packages ==="
-  apt install -y neofetch vlc
+  apt install -y alacritty neofetch vlc
   ;;
 *)
   echo "Invalid input. Please run the script again and choose (S)erver or (D)esktop."
