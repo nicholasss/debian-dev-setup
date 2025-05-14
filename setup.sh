@@ -37,10 +37,30 @@ apt install -y btop build-essential curl cmake \
   wget
 
 echo "=== [Root] Installing Neovim via tarball to /usr/local ==="
-curl -sL https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz |
+
+ARCH=$(uname -m)
+
+case "$ARCH" in
+x86_64)
+  NVIM_TARBALL="nvim-linux-x86_64.tar.gz"
+  EXTRACT_DIR="nvim-linux-x86_64"
+  ;;
+aarch64 | arm64)
+  NVIM_TARBALL="nvim-linux-arm64.tar.gz"
+  EXTRACT_DIR="nvim-linux-arm64"
+  ;;
+*)
+  echo "Unsupported architecture: $ARCH"
+  exit 1
+  ;;
+esac
+
+# Download and extract
+curl -sL "https://github.com/neovim/neovim/releases/latest/download/$NVIM_TARBALL" |
   tar -xzf - -C /usr/local
 
-ln -sf /usr/local/nvim-linux-x86_64/bin/nvim /usr/local/bin/nvim
+# Symlink globally
+ln -sf "/usr/local/$EXTRACT_DIR/bin/nvim" /usr/local/bin/nvim
 
 # Optional: verify
 command -v nvim && nvim --version | head -n 1
