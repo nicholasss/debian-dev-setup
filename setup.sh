@@ -141,6 +141,9 @@ sudo -u "$TARGET_USER" bash -c '
   echo "bind -s 'set completion-ignore-case on'" >>~/.bashrc
   echo "" >>~/.bashrc
 
+  echo "[User] Setting theme to BreezeDark..."
+  plasma-apply-colorscheme BreezeDark
+
   echo "[User] Done setting up user environment."
 '
 
