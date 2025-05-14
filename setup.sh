@@ -40,7 +40,7 @@ echo "=== [Root] Installing Neovim via tarball to /usr/local ==="
 curl -sL https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz |
   tar -xzf - -C /usr/local
 
-ln -sf /usr/local/nvim-linux64/bin/nvim /usr/local/bin/nvim
+ln -sf /usr/local/nvim-linux-x86_64/bin/nvim /usr/local/bin/nvim
 
 # Optional: verify
 command -v nvim && nvim --version | head -n 1
