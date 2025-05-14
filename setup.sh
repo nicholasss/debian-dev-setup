@@ -154,7 +154,7 @@ sudo -u "$TARGET_USER" bash -c '
   echo "[User] Modifying ~/.bashrc..."
   echo "" >>~/.bashrc
   echo "# ADDED BY NONSUDO_SETUP_SCRIPT" >>~/.bashrc
-  echo "bind -s "set completion-ignore-case on" >>~/.bashrc
+  echo "bind -s "set completion-ignore-case on"" >>~/.bashrc
   echo "" >>~/.bashrc
 
   echo "[User] Setting theme to BreezeDark..."
