@@ -115,6 +115,18 @@ sudo -u "$TARGET_USER" bash -c '
   echo "[User] Installing Node 22 LTS..."
   webi node@22
 
+  # updating git config
+  echo "[User] Updating ~/.gitconfig..."
+  echo "" >>~/.gitconfig
+  echo "# git aliases" >> ~/.gitconfig
+  echo "[alias]" >> ~/.gitconfig
+  echo "	aa = add --all" >> ~/.gitconfig
+  echo "	st = status -s -b" >> ~/.gitconfig
+  echo "	cm = commit -m" >> ~/.gitconfig
+  echo "	ll = log --all --decorate --graph --oneline" >> ~/.gitconfig
+  echo "	df = --no-pager diff" >> ~/.gitconfig
+  echo "" >>~/.gitconfig
+
   # create ~/.bashrc if it does not exist
   echo "[User] Creating ~/.bash_aliases..."
   if [ ! -f "~/.bash_aliases" ]; then
