@@ -87,11 +87,6 @@ sudo -u "$TARGET_USER" bash -c '
   git config --global alias.ll "log --all --decorate --graph --oneline"
   git config --global alias.df "--no-pager diff"
 
-  echo "[User] Installing lazygit..."
-  git clone --depth 10 https://github.com/jesseduffield/lazygit.git ~/Downloads/lazygit
-  cd ~/Downloads/lazygit
-  go install
-
   # Install lazyvim distro
   echo "[User] Installing LazyVim..."
   git clone https://github.com/LazyVim/starter ~/.config/nvim
@@ -114,6 +109,11 @@ sudo -u "$TARGET_USER" bash -c '
   # installing node 22.14 lts
   echo "[User] Installing Node 22 LTS..."
   webi node@22
+  
+  echo "[User] Installing lazygit..."
+  git clone --depth 10 https://github.com/jesseduffield/lazygit.git ~/Downloads/lazygit
+  cd ~/Downloads/lazygit
+  go install
 
   # create ~/.bashrc if it does not exist
   echo "[User] Creating ~/.bash_aliases..."
