@@ -36,19 +36,14 @@ apt install -y btop build-essential curl cmake \
   make nano ripgrep tmux unzip vim \
   wget
 
-# Install Neovim (latest via GitHub)
-echo "=== [Root] Installing latest Neovim release ==="
-NVIM_URL=$(curl -s 'https://api.github.com/repos/neovim/neovim/releases/latest' |
-  jq -r '.assets[] | select(.content_type == "application/x-debian-package") | .browser_download_url')
+echo "=== [Root] Installing Neovim via tarball to /usr/local ==="
+curl -sL https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz |
+  tar -xzf - -C /usr/local
 
-if [[ -z "$NVIM_URL" ]]; then
-  echo "Failed to fetch Neovim download URL."
-  exit 1
-fi
+ln -sf /usr/local/nvim-linux64/bin/nvim /usr/local/bin/nvim
 
-wget -O nvim.deb "$NVIM_URL"
-dpkg -i nvim.deb
-rm -f nvim.deb
+# Optional: verify
+command -v nvim && nvim --version | head -n 1
 
 # Server or Desktop specific tasks
 case "$INSTALL_TYPE" in
